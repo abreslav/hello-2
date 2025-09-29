@@ -1,0 +1,35 @@
+{
+    "django_app/middleware.py": [
+        {
+            "method": {
+                "enclosing_classes": [
+                    "RequestLoggingMiddleware"
+                ],
+                "method_name": "process_request"
+            },
+            "kind": "unit_tests"
+        },
+        {
+            "method": {
+                "enclosing_classes": [
+                    "RequestLoggingMiddleware"
+                ],
+                "method_name": "process_response"
+            },
+            "kind": "unit_tests"
+        }
+    ],
+    "django_app/models.py": [],
+    "django_app/tests.py": [],
+    "django_app/urls.py": [],
+    "django_app/views.py": [
+        {
+            "method": {
+                "enclosing_classes": [],
+                "method_name": "home"
+            },
+            "kind": "endpoint_tests"
+        }
+    ],
+    "django_proj/urls.py": []
+}
