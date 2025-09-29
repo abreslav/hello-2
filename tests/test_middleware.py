@@ -196,14 +196,15 @@ class TestRequestLoggingMiddleware(TestCase):
         request.META = {}
         request.body = b''
 
-        # Create response with binary content that can't be decoded
+        # Create response with content that will trigger the except block
         response = Mock(spec=HttpResponse)
         response.status_code = 500
-        response.content = b'\x00\x01\x02\x03'  # Binary content
         response.items.return_value = []
 
-        # Mock content.decode to raise an exception
-        response.content.decode = Mock(side_effect=UnicodeDecodeError('utf-8', b'', 0, 1, 'invalid'))
+        # Create a mock content object that raises UnicodeDecodeError when decode is called
+        mock_content = Mock()
+        mock_content.decode.side_effect = UnicodeDecodeError('utf-8', b'', 0, 1, 'invalid')
+        response.content = mock_content
 
         # Call the method
         result = self.middleware.process_response(request, response)
