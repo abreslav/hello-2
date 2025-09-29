@@ -46,7 +46,7 @@
             "console_application": false,
             "has_django": true,
             "has_external_apis": false,
-            "has_javascript": false,
+            "has_javascript": true,
             "has_node_js": false,
             "has_python": true,
             "has_server": true,
@@ -55,10 +55,11 @@
             "web_application": true
         },
         "external_apis": "external_apis.json",
-        "commit_message": "Implement HelloWorld Django app with Tailwind CSS",
+        "commit_message": "Add status page with system info and greet button",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
-        "test_reports": "test_reports.txt"
+        "test_reports": "test_reports.txt",
+        "spec_diff": "--- +++ @@ -7,8 +7,22 @@ \n # Routing\n \n-The app responds to only one route (/)\n+The app responds to routes:\n+ - /: the hello page\n+ - /status: the system status page\n \n-# User Interface\n+# Hello Page\n \n-A nice looking HTML page with the message: \"Hello from CodeSpeak!\"+A nice looking HTML page with the message: \"Hello from CodeSpeak!\"\n+- a button underneath the message saying \"Greet\"\n+  - on click, a JS alert dialog with the same message\n+\n+In the footer, there is a link to the system status page.\n+\n+# System Status Page\n+\n+Display system status information:\n+- OS name and version\n+- Current date and time\n+- CPU usage\n+- Memory usage"
     },
     "phase_manager": {
         "history": [
@@ -109,6 +110,54 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"e9942266-934b-4e09-bd58-54cde24666fe\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
                 "timestamp": "2025-09-29T13:40:04.025418+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:51:58.107677+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:51:58.147282+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:52:12.640618+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:52:23.675090+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"CheckExternalApisConfigurationFile\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:52:23.691101+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"GenerateExternalApisConfigValidation\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:52:23.708196+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"SetupProject\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:52:25.194080+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"ImplementSpecWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:54:47.386982+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:54:50.216984+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:54:59.576273+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:56:15.728754+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:56:15.745233+00:00"
             }
         ]
     }

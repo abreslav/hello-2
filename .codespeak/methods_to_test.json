@@ -26,6 +26,13 @@
                 "method_name": "home"
             },
             "kind": "endpoint_tests"
+        },
+        {
+            "method": {
+                "enclosing_classes": [],
+                "method_name": "status"
+            },
+            "kind": "endpoint_tests"
         }
     ]
 }
