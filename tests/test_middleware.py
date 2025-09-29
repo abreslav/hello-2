@@ -204,6 +204,7 @@ class TestRequestLoggingMiddleware(TestCase):
         # Create a mock content object that raises UnicodeDecodeError when decode is called
         mock_content = Mock()
         mock_content.decode.side_effect = UnicodeDecodeError('utf-8', b'', 0, 1, 'invalid')
+        mock_content.__len__ = Mock(return_value=10)  # Mock len() method
         response.content = mock_content
 
         # Call the method
