@@ -58,7 +58,8 @@
         "commit_message": "Implement HelloWorld Django app with Tailwind CSS",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
-        "test_reports": "test_reports.txt"
+        "test_reports": "test_reports.txt",
+        "spec_diff": "--- +++ @@ -7,8 +7,22 @@ \n # Routing\n \n-The app responds to only one route (/)\n+The app responds to routes:\n+ - /: the hello page\n+ - /status: the system status page\n \n-# User Interface\n+# Hello Page\n \n-A nice looking HTML page with the message: \"Hello from CodeSpeak!\"+A nice looking HTML page with the message: \"Hello from CodeSpeak!\"\n+- a button underneath the message saying \"Greet\"\n+  - on click, a JS alert dialog with the same message\n+\n+In the footer, there is a link to the system status page.\n+\n+# System Status Page\n+\n+Display system status information:\n+- OS name and version\n+- Current date and time\n+- CPU usage\n+- Memory usage"
     },
     "phase_manager": {
         "history": [
@@ -113,6 +114,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
                 "timestamp": "2025-09-29T13:51:58.107677+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"b54293df-c31f-4b95-a9f2-42aeb9dfaaad\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-29T13:51:58.147282+00:00"
             }
         ]
     }
