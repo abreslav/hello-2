@@ -16,6 +16,10 @@
                 }
             }
         }
+
+        function greetUser() {
+            alert('Hello from CodeSpeak!');
+        }
     </script>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-4">
@@ -34,12 +38,17 @@
             </div>
 
             <!-- Welcome message -->
-            <p class="text-gray-600 text-lg md:text-xl leading-relaxed">
+            <p class="text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
                 Welcome to your Django web application powered by CodeSpeak!
                 This elegant interface showcases the perfect blend of
                 <span class="font-semibold text-codespeak-blue">Django</span> and
                 <span class="font-semibold text-codespeak-purple">Tailwind CSS</span>.
             </p>
+
+            <!-- Greet Button -->
+            <button onclick="greetUser()" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-codespeak-blue to-codespeak-purple text-white font-medium rounded-full hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1 text-lg">
+                Greet
+            </button>
 
             <!-- Footer decoration -->
             <div class="mt-12 flex justify-center">
@@ -47,6 +56,13 @@
                     <span class="text-white font-medium">🚀 Built with Django & Tailwind CSS</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Footer with status link -->
+        <div class="mt-8 text-center">
+            <a href="{% url 'status' %}" class="text-codespeak-blue hover:text-codespeak-purple transition-colors duration-200 font-medium">
+                View System Status
+            </a>
         </div>
 
         <!-- Floating elements for visual appeal -->

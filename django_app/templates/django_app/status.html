@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status - CodeSpeak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'codespeak-blue': '#1E40AF',
+                        'codespeak-purple': '#7C3AED',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-2xl p-12 border border-gray-100">
+            <!-- Main heading -->
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-codespeak-blue to-codespeak-purple bg-clip-text text-transparent mb-8 text-center">
+                System Status
+            </h1>
+
+            <!-- Decorative elements -->
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <div class="w-12 h-1 bg-gradient-to-r from-codespeak-blue to-codespeak-purple rounded-full"></div>
+                <div class="w-3 h-3 bg-codespeak-purple rounded-full animate-pulse"></div>
+                <div class="w-12 h-1 bg-gradient-to-r from-codespeak-purple to-codespeak-blue rounded-full"></div>
+            </div>
+
+            <!-- Status Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- OS Information -->
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-codespeak-blue rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-gray-800">Operating System</h3>
+                    </div>
+                    <p class="text-gray-700 text-lg"><strong>{{ os_name }}</strong></p>
+                    <p class="text-gray-600">Version: {{ os_version }}</p>
+                </div>
+
+                <!-- Date and Time -->
+                <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-codespeak-purple rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-gray-800">Current Time</h3>
+                    </div>
+                    <p class="text-gray-700 text-lg font-mono">{{ current_datetime }}</p>
+                </div>
+
+                <!-- CPU Usage -->
+                <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-gray-800">CPU Usage</h3>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-1">
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full transition-all duration-500" style="width: {{ cpu_usage }}%"></div>
+                            </div>
+                        </div>
+                        <span class="ml-4 text-lg font-semibold text-gray-700">{{ cpu_usage }}%</span>
+                    </div>
+                </div>
+
+                <!-- Memory Usage -->
+                <div class="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-6 border border-orange-200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-gray-800">Memory Usage</h3>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-1">
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-orange-400 to-orange-600 h-3 rounded-full transition-all duration-500" style="width: {{ memory_usage }}%"></div>
+                            </div>
+                        </div>
+                        <span class="ml-4 text-lg font-semibold text-gray-700">{{ memory_usage }}%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center">
+                <a href="{% url 'home' %}" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-codespeak-blue to-codespeak-purple text-white font-medium rounded-full hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1">
+                    ← Back to Home
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating elements for visual appeal -->
+        <div class="absolute top-10 left-10 w-20 h-20 bg-codespeak-blue opacity-10 rounded-full blur-xl animate-bounce"></div>
+        <div class="absolute bottom-10 right-10 w-32 h-32 bg-codespeak-purple opacity-10 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute top-1/2 left-5 w-16 h-16 bg-gradient-to-r from-codespeak-blue to-codespeak-purple opacity-20 rounded-full blur-lg"></div>
+    </div>
+</body>
+</html>
