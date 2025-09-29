@@ -10,7 +10,7 @@ HelloWorld is a simple web app that displays a greeting.
 
 # Routing
 
-The app responds to only one route (/).
+The app responds to only one route (/)
 
 # User Interface
 
